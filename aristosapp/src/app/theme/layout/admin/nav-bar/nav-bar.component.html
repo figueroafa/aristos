@@ -1,0 +1,35 @@
+<div class="container" *ngIf="this.nextConfig.layout === 'horizontal' && this.nextConfig.subLayout === 'horizontal-2'; else mainHeader">
+  <ng-container *ngTemplateOutlet="mainHeader"></ng-container>
+</div>
+<ng-template #mainHeader>
+  <div class="m-header">
+    <a href="javascript:" class="mobile-menu" id="mobile-collapse" (click)="navCollapse()"><span></span></a>
+    <a [routerLink]="['/dashboard/analytics']" class="b-brand">
+      <img style="width: 25%" id="main-logo" src="../../../../../assets/logo-aristos.png" alt="" class="logo">
+<!--      <img src="assets/images/logo-icon.png" alt="" class="logo-thumb">-->
+      <h4 style="color: white;">ristos</h4>
+    </a>
+    <a class="mob-toggler" [ngClass]="{'on' : this.menuClass}" href="javascript:" (click)="toggleMobOption()"><i class="feather icon-more-vertical"></i></a>
+  </div>
+    <div class="collapse navbar-collapse" [style.display]="this.collapseStyle">
+      <app-nav-right class="ml-auto"></app-nav-right>
+    </div>
+<!--  <div>-->
+<!--    <i class="united states flag"></i>-->
+<!--    <select class="custom-select" style="width:150px;">-->
+<!--      <option> <span class="flag-icon flag-icon-gr"></span>Español</option>-->
+<!--      <option>Ingles</option>-->
+<!--      <option>Frances</option>-->
+<!--    </select>-->
+<!--    &lt;!&ndash;    <ng-select [items]="lang"&ndash;&gt;-->
+<!--    &lt;!&ndash;               bindLabel="name"&ndash;&gt;-->
+<!--    &lt;!&ndash;               placeholder="Seleccione idioma"&ndash;&gt;-->
+<!--    &lt;!&ndash;               [(ngModel)]="selectedlang"&ndash;&gt;-->
+<!--    &lt;!&ndash;                [closeOnSelect]="false">&ndash;&gt;-->
+<!--    &lt;!&ndash;    </ng-select>&ndash;&gt;-->
+<!--  </div>-->
+  <div class="ml-auto">
+    <button type="button" class="btn btn-link" (click)="goToRegister()" style="margin-right: 1rem; color: white;"> Crear cuenta</button>
+    <button type="button" class="btn btn-link" (click)="goToLogin()" style="color: white;"> Iniciar Sesión</button>
+  </div>
+</ng-template>

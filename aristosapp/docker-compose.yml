@@ -1,0 +1,11 @@
+version: '3'
+services:
+  aristos-fe:
+    build:
+      context: .
+      dockerfile: ./fe.Dockerfile
+    image: aristos-fe:1.0
+    container_name: aristos-fe
+    ports:
+      - 80:80
+    restart: always

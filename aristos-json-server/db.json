@@ -1,0 +1,236 @@
+{
+    "catalog_tipo": [
+      {
+        "id": 1,
+        "name": "Préstamo comercial"
+      },
+      {
+        "id": 2,
+        "name": "Préstamo personal"
+      },
+      {
+        "id": 3,
+        "name": "Préstamo hipotecario"
+      },
+      {
+        "id": 4,
+        "name": "Préstamo agrario"
+      },
+      {
+        "id": 5,
+        "name": "Préstamo a corto plazo"
+      },
+      {
+        "id": 6,
+        "name": "Préstamo pignoración"
+      },
+      {
+        "id": 7,
+        "name": "Factoraje"
+      },
+      {
+        "id": 8,
+        "name": "Préstamo de vehiculo"
+      }
+    ],
+    "catalog_pais": [
+      {
+        "id": 1,
+        "name": "El Salvador"
+      },
+      {
+        "id": 2,
+        "name": "Guatemala"
+      },
+      {
+        "id": 3,
+        "name": "Honduras"
+      },
+      {
+        "id": 4,
+        "name": "Nicaragua"
+      }
+    ],
+    "catalog_originador": [
+      {
+        "id": 1,
+        "name": "1pm"
+      },
+      {
+        "id": 2,
+        "name": "Aasa"
+      },
+      {
+        "id": 3,
+        "name": "Acema"
+      },
+      {
+        "id": 4,
+        "name": "Aforti"
+      },
+      {
+        "id": 5,
+        "name": "AgroCredit"
+      }
+    ],
+    "emisores_resumen": [
+        {
+          "id": 1,
+          "originador": "https://s3.eu-central-1.amazonaws.com/mintos-prod-public-files/CE472002-446B-0C54-C421-1D8034F66C96.png",
+          "calificacion": "A",
+          "tipo_prestamo": [
+              {
+                  "id": 1,
+                  "name": "personal"
+              },
+              {
+                  "id": 2,
+                  "name": "hipotecario"
+              }
+          ],
+          "pais": "fr",
+          "divisa": "GBP",
+          "garantia_recompra": true,
+          "dinero_invertido": "10%",
+          "creacion": "2000",
+          "prestamos_emitidos": "950 M",
+          "cartera_prestamos": "122 M",
+          "prestamos_aristos": "0.02 M",
+          "porcentaje_rentabilidad": "11.3%"
+        },
+        {
+          "id": 2,
+          "originador": "https://s3.eu-central-1.amazonaws.com/mintos-prod-public-files/45C1E3AE-C276-2B24-B339-F40B32E86BE4.png",
+          "calificacion": "A",
+          "tipo_prestamo": [
+              {
+                  "id": 1,
+                  "name": "personal"
+              },
+              {
+                  "id": 2,
+                  "name": "hipotecario"
+              }
+          ],
+          "pais": "sv",
+          "divisa": "GBP",
+          "garantia_recompra": true,
+          "dinero_invertido": "10%",
+          "creacion": "2000",
+          "prestamos_emitidos": "950 M",
+          "cartera_prestamos": "122 M",
+          "prestamos_aristos": "0.02 M",
+          "porcentaje_rentabilidad": "11.3%"
+        },
+        {
+          "id": 3,
+          "originador": "https://s3.eu-central-1.amazonaws.com/mintos-prod-public-files/AC54FAC4-A6B5-B1F7-B4DF-B89D61EDFF72.png",
+          "calificacion": "A",
+          "tipo_prestamo": [
+              {
+                  "id": 1,
+                  "name": "personal"
+              },
+              {
+                  "id": 2,
+                  "name": "hipotecario"
+              }
+          ],
+          "pais": "hn",
+          "divisa": "GBP",
+          "garantia_recompra": true,
+          "dinero_invertido": "10%",
+          "creacion": "2000",
+          "prestamos_emitidos": "950 M",
+          "cartera_prestamos": "122 M",
+          "prestamos_aristos": "0.02 M",
+          "porcentaje_rentabilidad": "11.3%"
+        },
+        {
+          "id": 4,
+          "originador": "https://s3.eu-central-1.amazonaws.com/mintos-prod-public-files/B3DF7AA0-E5CA-1FE9-99CA-BFFFD27723FA.png",
+          "calificacion": "A",
+          "tipo_prestamo": [
+              {
+                  "id": 1,
+                  "name": "personal"
+              },
+              {
+                  "id": 2,
+                  "name": "hipotecario"
+              }
+          ],
+          "pais": "gt",
+          "divisa": "GBP",
+          "garantia_recompra": true,
+          "dinero_invertido": "10%",
+          "creacion": "2000",
+          "prestamos_emitidos": "950 M",
+          "cartera_prestamos": "122 M",
+          "prestamos_aristos": "0.02 M",
+          "porcentaje_rentabilidad": "11.3%"
+        }
+    ],
+    "emisores_detalle": [
+      {
+        "id": 1,
+        "originador": "https://s3.eu-central-1.amazonaws.com/mintos-prod-public-files/CE472002-446B-0C54-C421-1D8034F66C96.png",
+        "empresa": "1pm plc",
+        "estructura_inversion": "Direct",
+        "activos_pignorados": "NO",
+        "garantia_grupo": "NO",
+        "ingresos_intereses": "SI",
+        "ing_intereses_pago": "NO",
+        "ingresos_penalizacion": "NO",
+        "periodo_gracia": "0",
+        "interes_demora": "NO",
+        "tipo": "Schedule based",
+        "secuencia_amortizacion": "Interest, Principal"
+      },
+      {
+        "id": 2,
+        "originador": "https://s3.eu-central-1.amazonaws.com/mintos-prod-public-files/45C1E3AE-C276-2B24-B339-F40B32E86BE4.png",
+        "empresa": "Aasa Polska",
+        "estructura_inversion": "Direct",
+        "activos_pignorados": "NO",
+        "garantia_grupo": "NO",
+        "ingresos_intereses": "SI",
+        "ing_intereses_pago": "NO",
+        "ingresos_penalizacion": "NO",
+        "periodo_gracia": "0",
+        "interes_demora": "NO",
+        "tipo": "Schedule based",
+        "secuencia_amortizacion": "Interest, Principal"
+      },
+      {
+        "id": 3,
+        "originador": "https://s3.eu-central-1.amazonaws.com/mintos-prod-public-files/AC54FAC4-A6B5-B1F7-B4DF-B89D61EDFF72.png",
+        "empresa": "Acema",
+        "estructura_inversion": "Direct",
+        "activos_pignorados": "NO",
+        "garantia_grupo": "NO",
+        "ingresos_intereses": "SI",
+        "ing_intereses_pago": "NO",
+        "ingresos_penalizacion": "NO",
+        "periodo_gracia": "0",
+        "interes_demora": "NO",
+        "tipo": "Schedule based",
+        "secuencia_amortizacion": "Interest, Principal"
+      },
+      {
+        "id": 4,
+        "originador": "https://s3.eu-central-1.amazonaws.com/mintos-prod-public-files/B3DF7AA0-E5CA-1FE9-99CA-BFFFD27723FA.png",
+        "empresa": "SIA AgroCredit",
+        "estructura_inversion": "Direct",
+        "activos_pignorados": "NO",
+        "garantia_grupo": "NO",
+        "ingresos_intereses": "SI",
+        "ing_intereses_pago": "NO",
+        "ingresos_penalizacion": "NO",
+        "periodo_gracia": "0",
+        "interes_demora": "NO",
+        "tipo": "Schedule based",
+        "secuencia_amortizacion": "Interest, Principal"
+      }
+  ]
+}  

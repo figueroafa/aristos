@@ -1,0 +1,242 @@
+<div class="row">
+  <div class="col-sm-12">
+    <app-card cardTitle="Emisores Detalle" [hidHeader]="true" cardClass="tab-card">
+      <div class="d-flex justify-content-between mt-3">
+        <div>
+          <h3>Préstamo 28238869-01</h3>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-5">
+          <div class="table-responsive">
+            <table class="table">
+              <tbody>
+              <tr>
+                <td class="txt-izq">Tipo de Préstamo</td>
+                <td class="txt-der">Préstamo personal</td>
+              </tr>
+              <tr>
+                <td class="txt-izq">Importe del préstamo</td>
+                <td class="txt-der">300.00</td>
+              </tr>
+              <tr>
+                <td class="txt-izq">Cantidad restante del principal</td>
+                <td class="txt-der">300.00</td>
+              </tr>
+              <tr>
+                <td class="txt-izq">TAE efectiva cargada al prestatario</td>
+                <td class="txt-der">33%</td>
+              </tr>
+              <tr>
+                <td class="txt-izq">Tipo de Interes</td>
+                <td class="txt-der">10.0%</td>
+              </tr>
+              <tr>
+                <td class="txt-izq">LTV Inicial</td>
+                <td class="txt-der">-</td>
+              </tr>
+              <tr>
+                <td class="txt-izq">LTV</td>
+                <td class="txt-der">-</td>
+              </tr>
+              <tr>
+                <td class="txt-izq">Periodo inicial</td>
+                <td class="txt-der">46 m. 0 d.</td>
+              </tr>
+              <tr>
+                <td class="txt-izq">Periodo restante</td>
+                <td class="txt-der">45 m. 3 d.</td>
+              </tr>
+              <tr>
+                <td class="txt-izq">Ampliación del periodo</td>
+                <td class="txt-der">No</td>
+              </tr>
+              <tr>
+                <td class="txt-izq">Método de amortización</td>
+                <td class="txt-der">Total</td>
+              </tr>
+              <tr>
+                <td class="txt-izq">Fecha de inclusión</td>
+                <td class="txt-der">06.01.2020</td>
+              </tr>
+              <tr>
+                <td class="txt-izq">Fecha de emisión</td>
+                <td class="txt-der">23.12.2019</td>
+              </tr>
+              <tr>
+                <td class="txt-izq">Fecha de cierre</td>
+                <td class="txt-der">23.10.2023</td>
+              </tr>
+              <tr>
+                <td class="txt-izq">Estado</td>
+                <td class="txt-der">Actual</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="row">
+            <div class="col-12">
+              <!--              <app-card [hidHeader]="true" blockClass="m-t-15" style="border-left-color: #007bff">-->
+              <canvas baseChart width="100" height="100"
+                      [data]="pieChartData"
+                      [labels]="pieChartLabels"
+                      [options]="pieChartOptions"
+                      [legend]="pieChartLegend"
+                      [chartType]="'pie'">
+
+              </canvas>
+
+              <div class="table-responsive mt-2">
+                <h6 style="text-align: center">Detalles del originador de préstamos</h6>
+                <table class="table">
+                  <tbody>
+                  <tr>
+                    <td class="txt-izq">Originador</td>
+                    <td class="txt-der">Mogo</td>
+                  </tr>
+                  <tr>
+                    <td class="txt-izq">Entidad legal</td>
+                    <td class="txt-der">AS Mogo</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!--              </app-card>-->
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="row">
+            <div class="col-12">
+              <app-card [hidHeader]="true" blockClass="m-t-15" style="border-left-color: #007bff">
+                <h5 style="border-bottom: #4680ff 2px solid" class="card-title">Invertir</h5>
+                <div class="d-flex justify-content-between">
+                  <p>Disponible</p>
+                  <p>$10.00</p>
+                </div>
+                <button type="button" class="btn-block btn-primary">Invertir</button>
+                <!--                <div class="input-group mb-3">-->
+                <!--                  <div class="input-group-prepend">-->
+                <!--                    <span class="input-group-text" id="basic-addon1">@</span>-->
+                <!--                  </div>-->
+                <!--                  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">-->
+                <!--                </div>-->
+              </app-card>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12">
+          <app-card [hidHeader]="true" blockClass="m-t-15" style="background-color: #9FA8B4">
+            <ngb-tabset type="pills" class="mb-3">
+              <ngb-tab title="Prestatario y aval" class="mb-3">
+                <ng-template ngbTabContent>
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="table-responsive mt-2">
+                        <h6 style="text-align: center">Detalles del originador de préstamos</h6>
+                        <table class="table">
+                          <tbody>
+                          <tr>
+                            <td class="txt-izq">Originador</td>
+                            <td class="txt-der">Mogo</td>
+                          </tr>
+                          <tr>
+                            <td class="txt-izq">Entidad legal</td>
+                            <td class="txt-der">AS Mogo</td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Esquema de pago" class="mb-3">
+                <ng-template ngbTabContent>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="table-responsive mt-2">
+                        <table class="table table-striped nowrap table-hover">
+                          <thead>
+                          <tr>
+                            <th class="column-header">Fecha</th>
+                            <th class="column-header">Principal</th>
+                            <th class="column-header">Intereses</th>
+                            <th class="column-header">Total</th>
+                            <th class="column-header">Pago recibido</th>
+                            <th class="column-header">Fecha del pago</th>
+                            <th class="column-header">Estado</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                            <td class="column-header">24.01.2020</td>
+                            <td class="column-header">$100.00</td>
+                            <td class="column-header">$0.87</td>
+                            <td class="column-header">$100.87</td>
+                            <td class="column-header"></td>
+                            <td class="column-header"></td>
+                            <td class="column-header">Scheduled</td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Desglose de la inversión" class="mb-3">
+                <ng-template ngbTabContent>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="table-responsive mt-2">
+                        <table class="table table-striped nowrap table-hover">
+                          <thead>
+                          <tr>
+                            <th class="column-header">Inversor</th>
+                            <th class="column-header">Importe</th>
+                            <th class="column-header">Disponible para invertir</th>
+                            <th class="column-header">Total</th>
+                            <th class="column-header">Descuento/Prima</th>
+                            <th class="column-header">Precio</th>
+                            <th class="column-header">Acción</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                            <td class="column-header">Creditstar dinero propio invertido</td>
+                            <td class="column-header">$5.00</td>
+                            <td class="column-header"></td>
+                            <td class="column-header"></td>
+                            <td class="column-header"></td>
+                            <td class="column-header"></td>
+                            <td class="column-header"><button [disabled]="true" type="button" class="btn-sm btn-primary">Invertir</button></td>
+                          </tr>
+                          <tr>
+                            <td class="column-header">Creditstar</td>
+                            <td class="column-header">$10.00</td>
+                            <td class="column-header">$10.00</td>
+                            <td class="column-header">$10.00</td>
+                            <td class="column-header">0.0%</td>
+                            <td class="column-header">$10.00</td>
+                            <td class="column-header"><button type="button" class="btn-sm btn-primary">Invertir</button></td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+            </ngb-tabset>
+
+          </app-card>
+        </div>
+      </div>
+    </app-card>
+  </div>
+</div>

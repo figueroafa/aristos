@@ -1,0 +1,180 @@
+<div class="row">
+  <div class="col-sm-12">
+    <app-card cardTitle="Emisores Detalle" cardClass="tab-card">
+      <div class="d-flex justify-content-between mt-3">
+        <div>
+          <h1>Aforti</h1>
+        </div>
+        <div>
+          <img src="https://s3.eu-central-1.amazonaws.com/mintos-prod-public-files/4BAF7C64-D034-3345-E983-DA3BF7C14EDD.png">
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-6">
+          <div class="row">
+            <div class="col-4">
+              <app-card [hidHeader]="true" blockClass="m-t-15" style="border-left-color: #007bff">
+                <h5 class="card-title">Calificaciones de Aristos</h5>
+                <h2 class="card-text">C+</h2>
+              </app-card>
+            </div>
+            <div class="col-4">
+              <app-card [hidHeader]="true" blockClass="m-t-15">
+                <h5 class="card-title">Préstamos emitidos</h5>
+                <h2 class="card-text">20 M</h2>
+              </app-card>
+            </div>
+            <div class="col-4">
+              <app-card [hidHeader]="true" blockClass="m-t-15">
+                <h5 class="card-title">Cartera de préstamos</h5>
+                <h2 class="card-text">16.7 M</h2>
+              </app-card>
+            </div>
+            <div class="col-4">
+              <app-card [hidHeader]="true" blockClass="m-t-15">
+                <h5 class="card-title">Garantía de recompra</h5>
+                <h2 class="card-text">C+</h2>
+              </app-card>
+            </div>
+            <div class="col-4">
+              <app-card [hidHeader]="true" blockClass="m-t-15">
+                <h5 class="card-title">Dinero propio invertido</h5>
+                <h2 class="card-text">5%</h2>
+              </app-card>
+            </div>
+            <div class="col-4">
+              <app-card [hidHeader]="true" blockClass="m-t-15">
+                <h5 class="card-title">% de rentab. media</h5>
+                <h2 class="card-text">11.1%</h2>
+              </app-card>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+            <div class="table-responsive">
+              <table class="table">
+                <tbody>
+                <tr>
+                  <td style="text-align: left">Website</td>
+                  <td style="text-align: right">afortifinance.pl</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left">Founded</td>
+                  <td style="text-align: right">2009</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left">Trabajadores</td>
+                  <td style="text-align: right">56</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left">Tipo de Préstamo</td>
+                  <td style="text-align: right">Mark</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left">País</td>
+                  <td style="text-align: right">Mark</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left">Divisa</td>
+                  <td style="text-align: right">EUR</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left">TAE efectiva cargada al prestatario</td>
+                  <td style="text-align: right">33%</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left">Préstamos pendientes en Aristos</td>
+                  <td style="text-align: right">2 121 296</td>
+                </tr>
+                <tr>
+                  <td style="text-align: left">Ampliación del periodo</td>
+                  <td style="text-align: right">No</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12">
+          <app-card [hidHeader]="true" blockClass="m-t-15" style="background-color: #9FA8B4">
+            <h3 class="card-title">Información</h3>
+            <p class="card-text" style="text-align: justify">Aforti Finance es un prestamista no bancario que concede crédito a pymes en cuatro regiones de Polonia: Polonia Central, Pomerania, Gran Polonia y Silesia. La empresa forma parte de Aforti Holding, admitido a cotización oficial en el Mercado de Valores de Varsovia. La mayoría de los prestatarios son empresarios individuales interesados en contratar préstamos para el capital operativo de sus empresas. Aforti Finance ha desarrollado un riguroso protocolo de evaluación crediticia. Los clientes deben contar con una buena tradición de solvencia y un fuerte flujo de efectivo en la empresa. Por término medio, se aprueba la cuarta parte de las solicitudes. Aforti Holding SA ofrece una garantía de recompra de grupo. Esto significa que garantizará la ejecución de las obligaciones de recompra.</p>
+          </app-card>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12">
+          <app-card [hidHeader]="true" blockClass="m-t-15" style="background-color: #9FA8B4">
+            <h3 class="card-title">Detalle de país</h3>
+            <ngb-tabset type="pills" class="mb-3">
+              <ngb-tab title="Información general" class="mb-3">
+                <ng-template ngbTabContent>
+                  <div table-responsive mt-5>
+                  <table datatable [dtOptions]="dtResponsiveOptions" class="table table-striped nowrap table-hover row-border hover">
+                    <thead>
+                    <tr>
+                      <th>Originador</th>
+                      <th>Calificaciones de Aristos</th>
+                      <th style="width: 20px">Tipo de préstamos</th>
+                      <th>País</th>
+                      <th>Divisa</th>
+                      <th>Garantía de recompra</th>
+                      <th>Dinero propio invertido</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+
+                      <td><img src="https://s3.eu-central-1.amazonaws.com/mintos-prod-public-files/CE472002-446B-0C54-C421-1D8034F66C96.png"> </td>
+                      <td>A</td>
+                      <td><i class="feather icon-home" style="font-size: 20px"></i></td>
+                      <td><i class="flag-icon flag-icon-gr flag-icon-squared"></i></td>
+                      <td>GBP</td>
+                      <td><i class="feather icon-shield" style="font-size: 20px"></i></td>
+                      <td>10%</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Detalles" class="mb-3">
+                <ng-template ngbTabContent>
+                  <div table-responsive mt-5>
+                    <table datatable [dtOptions]="dtResponsiveOptions" class="table table-striped nowrap table-hover row-border hover">
+                      <thead>
+                      <tr>
+                        <th>Originador</th>
+                        <th>Calificaciones de Aristos</th>
+                        <th style="width: 20px">Tipo de préstamos</th>
+                        <th>País</th>
+                        <th>Divisa</th>
+                        <th>Garantía de recompra</th>
+                        <th>Dinero propio invertido</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+
+                        <td><img src="https://s3.eu-central-1.amazonaws.com/mintos-prod-public-files/CE472002-446B-0C54-C421-1D8034F66C96.png"> </td>
+                        <td>A</td>
+                        <td><i class="feather icon-home" style="font-size: 20px"></i></td>
+                        <td><i class="flag-icon flag-icon-gr flag-icon-squared"></i></td>
+                        <td>GBP</td>
+                        <td><i class="feather icon-shield" style="font-size: 20px"></i></td>
+                        <td>10%</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+            </ngb-tabset>
+
+          </app-card>
+        </div>
+      </div>
+    </app-card>
+  </div>
+</div>

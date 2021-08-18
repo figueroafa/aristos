@@ -1,0 +1,147 @@
+.outer-container {
+  border: 1px dotted black;
+  width: 100%;
+  height: 50%;
+  text-align: center;
+}
+.inner-container {
+  border: 1px solid black;
+  display: inline-block;
+  position: relative;
+}
+.video-overlay {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin: 10px;
+  padding: 5px 5px;
+  font-size: 20px;
+  font-family: Helvetica;
+  color: #FFF;
+  background-color: rgba(50, 50, 50, 0.3);
+}
+.content-body {
+
+
+  font-size: 14px;
+  font-family: Helvetica;
+  color: rgb(30, 122, 158);
+  text-align: justify;
+
+}
+.image-overlay {
+  position: absolute;
+  left: 550px;
+  top: 75px;
+  margin: 10px;
+  padding: 5px 5px;
+  font-size: 20px;
+  font-family: Helvetica;
+  color: #FFF;
+  background-color: rgba(50, 50, 50, 0.3);
+  text-align: justify;
+  width: 30%;
+  height: 50%;
+}
+video {
+  width: 50%;
+  height:30%;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.box-shadow {
+  -webkit-box-shadow: -2px 4px 16px 1px rgba(158,155,158,1);
+  -moz-box-shadow: -2px 4px 16px 1px rgba(158,155,158,1);
+  box-shadow: -2px 4px 16px 1px rgba(158,155,158,1);
+}
+
+.testimonials {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  .testimonial-item {
+    max-width: 18rem;
+    img {
+      max-width: 12rem;
+      box-shadow: 0 5px 5px 0 #A9A9A9;
+    }
+  }
+}
+
+.showcase {
+  .showcase-text {
+    padding: 3rem;
+  }
+  .showcase-img {
+    min-height: 30rem;
+    background-size: cover;
+  }
+  @media (min-width: 768px) {
+    .showcase-text {
+      padding: 7rem;
+    }
+  }
+}
+
+.features-icons {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  .features-icons-item {
+    max-width: 20rem;
+    .features-icons-icon {
+      height: 7rem;
+      i {
+        font-size: 4.5rem;
+      }
+    }
+    &:hover {
+      .features-icons-icon {
+        i {
+          font-size: 5rem;
+        }
+      }
+    }
+  }
+}
+
+#myVideo {
+  //position: fixed;
+  //left: 0;
+  //top: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+header.masthead {
+  position: relative;
+  background: #A9A9A9 url('../../../assets/crowdlending.mp4') no-repeat center center;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  .overlay {
+    position: absolute;
+    background-color: #A9A9A9;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  @media (min-width: 768px) {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    h1 {
+      font-size: 3rem;
+    }
+  }
+}

@@ -1,0 +1,427 @@
+<div class="row">
+  <div class="col-sm-12">
+    <app-card *ngIf="!showDetail" cardTitle="Lista de Emisores" [options]="false" cardClass="tab-card">
+      <ngb-tabset type="pills" class="mb-3">
+        <ngb-tab title="RESUMEN" class="mb-3">
+          <ng-template ngbTabContent>
+            <div class="row">
+              <div class="col-md-3 mt-2">
+                <label for="tipo">Tipo</label>
+                <ng-select id="tipo"
+                           [items]="tipo"
+                           [multiple]="true"
+                           bindLabel="name"
+                           [selectableGroup]="true"
+                           [closeOnSelect]="false"
+                           placeholder="Tipo"
+                           [(ngModel)]="selectedTipo" [ngModelOptions]="{standalone: true}">
+                  <ng-template ng-option-tmp let-item="item"
+                               let-index="index" let-item$="item$">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" [ngModel]="item$.selected"
+                             class="custom-control-input"/>
+                      <label class="form-check-label ml-2 custom-control-label">{{item.name}}</label>
+                    </div>
+                  </ng-template>
+                </ng-select>
+              </div>
+              <div class="col-md-3 mt-2">
+                <label for="pais">País</label>
+                <ng-select id="pais"
+                           [items]="pais"
+                           [multiple]="true"
+                           bindLabel="name"
+                           groupBy="gender"
+                           [selectableGroup]="true"
+                           [closeOnSelect]="false"
+                           bindValue="id"
+                           placeholder="Entidades por país"
+                           [(ngModel)]="selectedPais">
+                  <ng-template ng-option-tmp let-item="item"
+                               let-index="index" let-item$="item$">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" [ngModel]="item$.selected"
+                             class="custom-control-input"/>
+                      <label class="form-check-label ml-2 custom-control-label">{{item.name}}</label>
+                    </div>
+                  </ng-template>
+                </ng-select>
+              </div>
+              <div class="col-md-3 mt-2">
+                <label for="garantiaR">Garantía de recompra</label>
+                <ng-select id="garantiaR"
+                           [items]="garantiaR"
+                           [multiple]="true"
+                           bindLabel="name"
+                           groupBy="gender"
+                           [selectableGroup]="true"
+                           [closeOnSelect]="false"
+                           bindValue="id"
+                           placeholder="Entidades por garantía de recompra"
+                           [(ngModel)]="selectedGarantiaR">
+                  <ng-template ng-option-tmp let-item="item"
+                               let-index="index" let-item$="item$">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" [ngModel]="item$.selected"
+                             class="custom-control-input"/>
+                      <label class="form-check-label ml-2 custom-control-label">{{item}}</label>
+                    </div>
+                  </ng-template>
+                </ng-select>
+              </div>
+              <div class="col-md-3 mt-2">
+                <label for="calificacion">Calificación de Aristos</label>
+                <ng-select id="calificacion"
+                           [items]="calificacion"
+                           [multiple]="true"
+                           bindLabel="name"
+                           groupBy="gender"
+                           [selectableGroup]="true"
+                           [closeOnSelect]="false"
+                           bindValue="id"
+                           placeholder="Entidades por tipo"
+                           [(ngModel)]="selectedCalificacion">
+                  <ng-template ng-option-tmp let-item="item"
+                               let-index="index" let-item$="item$">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" [ngModel]="item$.selected"
+                             class="custom-control-input"/>
+                      <label class="form-check-label ml-2 custom-control-label">{{item}}</label>
+                    </div>
+                  </ng-template>
+                </ng-select>
+              </div>
+              <div class="col-md-3 mt-2">
+                <label for="originador">Originador</label>
+                <ng-select id="originador"
+                           [items]="originador"
+                           [multiple]="true"
+                           bindLabel="name"
+                           groupBy="gender"
+                           [selectableGroup]="true"
+                           [closeOnSelect]="false"
+                           bindValue="id"
+                           placeholder="Entidades por originador"
+                           [(ngModel)]="selectedOriginador">
+                  <ng-template ng-option-tmp let-item="item"
+                               let-index="index" let-item$="item$">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" [ngModel]="item$.selected"
+                             class="custom-control-input"/>
+                      <label class="form-check-label ml-2 custom-control-label">{{item.name}}</label>
+                    </div>
+                  </ng-template>
+                </ng-select>
+              </div>
+              <div class="col-md-3 mt-4">
+                <button type="button" class="btn btn-outline-primary"><i class="feather icon-refresh-ccw"></i> Borrar filtros</button>
+              </div>
+            </div>
+            <div class="table-responsive mt-5">
+              <table datatable [dtOptions]="dtResponsiveOptions" style="table-layout:fixed;" class="table table-sm table-striped nowrap table-hover row-border hover">
+                <thead>
+                <tr>
+                  <th class="column-header">Originador</th>
+                  <th class="column-header">Calificaciones de Aristos</th>
+                  <th class="column-header">Tipo de préstamos</th>
+                  <th class="column-header">País</th>
+                  <th class="column-header">Divisa</th>
+                  <th class="column-header">Garantía de recompra</th>
+                  <th class="column-header">Dinero propio invertido</th>
+                  <th class="column-header">Creación</th>
+                  <th class="column-header">Préstamos emitidos</th>
+                  <th class="column-header">Cartera de préstamos</th>
+                  <th class="column-header">Préstamos pendientes en Aristos</th>
+                  <th class="column-header">Porcentaje de entabilidad media</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of emisores_resumen">
+                  <td><img src="{{item.originador}}"> </td>
+                  <td class="column-header"><h6 class="text-note">{{ item.calificacion }}</h6></td>
+                  <td class="column-header"><i class="feather icon-home text-primary" style="font-size: 20px"></i></td>
+                  <td class="column-header"><flag-icon country="{{ item.pais }}" squared style="font-size: 12px"></flag-icon></td>
+                  <td class="column-header">{{ item.divisa }}</td>
+                  <td class="column-header"><i class="feather icon-shield" style="font-size: 20px"></i></td>
+                  <td class="column-header">{{ item.dinero_invertido }}</td>
+                  <td class="column-header">{{ item.creacion }}</td>
+                  <td class="column-header">{{ item.prestamos_emitidos }}</td>
+                  <td class="column-header">{{ item.cartera_prestamos }}</td>
+                  <td class="column-header">{{ item.prestamos_aristos }}</td>
+                  <td class="column-header">{{ item.porcentaje_rentabilidad }}</td>
+                </tr>
+              </table>
+            </div>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="DETALLE">
+          <ng-template ngbTabContent>
+            <div class="row">
+              <div class="col-md-3 mt-2">
+                <label for="estructura">Estructura de inversión</label>
+                <ng-select id="estructura"
+                           [items]="estructura"
+                           [multiple]="true"
+                           bindLabel="name"
+                           groupBy="gender"
+                           [selectableGroup]="true"
+                           [closeOnSelect]="false"
+                           bindValue="id"
+                           placeholder="Entidades por estructura de inversión"
+                           [(ngModel)]="selectedEstructura">
+                  <ng-template ng-option-tmp let-item="item"
+                               let-index="index" let-item$="item$">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" [ngModel]="item$.selected"
+                             class="custom-control-input"/>
+                      <label class="form-check-label ml-2 custom-control-label">{{item.name}}</label>
+                    </div>
+                  </ng-template>
+                </ng-select>
+              </div>
+              <div class="col-md-3 mt-2">
+                <label for="garantiaG">Garantía de grupo</label>
+                <ng-select id="garantiaG"
+                           [items]="garantiaG"
+                           [multiple]="true"
+                           bindLabel="name"
+                           groupBy="gender"
+                           [selectableGroup]="true"
+                           [closeOnSelect]="false"
+                           bindValue="id"
+                           placeholder="Entidades por garantía de grupo"
+                           [(ngModel)]="selectedGarantiaG">
+                  <ng-template ng-option-tmp let-item="item"
+                               let-index="index" let-item$="item$">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" [ngModel]="item$.selected"
+                             class="custom-control-input"/>
+                      <label class="form-check-label ml-2 custom-control-label">{{item}}</label>
+                    </div>
+                  </ng-template>
+                </ng-select>
+              </div>
+              <div class="col-md-3 mt-4">
+                <button type="button" class="btn btn-outline-primary"><i class="feather icon-refresh-ccw"></i> Borrar filtros</button>
+              </div>
+            </div>
+            <div class="table-responsive mt-5">
+              <table datatable [dtOptions]="dtResponsiveOptions" style="table-layout:fixed;" class="table table-sm table-striped nowrap table-hover row-border hover">
+                <thead>
+                <tr>
+                  <th class="column-header">Originador</th>
+                  <th class="column-header">Empresa</th>
+                  <th class="column-header">Estructura de inversión</th>
+                  <th class="column-header">Activos pignorados</th>
+                  <th class="column-header">Garantía de grupo</th>
+                  <th class="column-header">Ingresos por intereses</th>
+                  <th class="column-header">Ingresos por intereses según la estructura de pagos</th>
+                  <th class="column-header">Ingresos por penalizaciones</th>
+                  <th class="column-header">Periodo de gracia</th>
+                  <th class="column-header">Interés de demora</th>
+                  <th class="column-header">Tipo</th>
+                  <th class="column-header">Secuencia de amortización</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of emisores_detalle">
+                  <td><img src="{{ item.originador }}"> </td>
+                  <td class="column-header">{{ item.empresa }}</td>
+                  <td class="column-header">{{ item.estructura_inversion }}</td>
+                  <td class="column-header">{{ item.activos_pignorados }}</td>
+                  <td class="column-header">{{ item.garantia_grupo }}</td>
+                  <td class="column-header">{{ item.ingresos_intereses }}</td>
+                  <td class="column-header">{{ item.ing_intereses_pago }}</td>
+                  <td class="column-header">{{ item.ingresos_penalizacion }}</td>
+                  <td class="column-header">{{ item.periodo_gracia }}</td>
+                  <td class="column-header">{{ item.interes_demora }}</td>
+                  <td class="column-header">{{ item.tipo }}</td>
+                  <td class="column-header">{{ item.secuencia_amortizacion }}</td>
+                </tr>
+              </table>
+            </div>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+    </app-card>
+    <app-card *ngIf="showDetail" cardTitle="Detalle de Emisores" [options]="false" cardClass="tab-card">
+      <div class="d-flex justify-content-between mt-3">
+        <div>
+          <h1>Aforti</h1>
+        </div>
+        <div>
+          <button type="button" class="btn btn-danger btn-sm" (click)="return()">regresar</button>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-6">
+          <div class="row">
+            <div class="col-4">
+              <app-card [hidHeader]="true" blockClass="m-t-15" style="border-left-color: #007bff">
+                <h5 class="card-title">Calificaciones de Aristos</h5>
+                <h2 class="card-text">C+</h2>
+              </app-card>
+            </div>
+            <div class="col-4">
+              <app-card [hidHeader]="true" blockClass="m-t-15">
+                <h5 class="card-title">Préstamos emitidos</h5>
+                <h2 class="card-text">20 M</h2>
+              </app-card>
+            </div>
+            <div class="col-4">
+              <app-card [hidHeader]="true" blockClass="m-t-15">
+                <h5 class="card-title">Cartera de préstamos</h5>
+                <h2 class="card-text">16.7 M</h2>
+              </app-card>
+            </div>
+            <div class="col-4">
+              <app-card [hidHeader]="true" blockClass="m-t-15">
+                <h5 class="card-title">Garantía de recompra</h5>
+                <h2 class="card-text">C+</h2>
+              </app-card>
+            </div>
+            <div class="col-4">
+              <app-card [hidHeader]="true" blockClass="m-t-15">
+                <h5 class="card-title">Dinero propio invertido</h5>
+                <h2 class="card-text">5%</h2>
+              </app-card>
+            </div>
+            <div class="col-4">
+              <app-card [hidHeader]="true" blockClass="m-t-15">
+                <h5 class="card-title">% de rentab. media</h5>
+                <h2 class="card-text">11.1%</h2>
+              </app-card>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="d-flex justify-content-end mt-3">
+            <img src="https://s3.eu-central-1.amazonaws.com/mintos-prod-public-files/4BAF7C64-D034-3345-E983-DA3BF7C14EDD.png">
+          </div>
+          <div class="table-responsive">
+            <table class="table">
+              <tbody>
+              <tr>
+                <td style="text-align: left">Website</td>
+                <td style="text-align: right">afortifinance.pl</td>
+              </tr>
+              <tr>
+                <td style="text-align: left">Founded</td>
+                <td style="text-align: right">2009</td>
+              </tr>
+              <tr>
+                <td style="text-align: left">Trabajadores</td>
+                <td style="text-align: right">56</td>
+              </tr>
+              <tr>
+                <td style="text-align: left">Tipo de Préstamo</td>
+                <td style="text-align: right">Mark</td>
+              </tr>
+              <tr>
+                <td style="text-align: left">País</td>
+                <td style="text-align: right">Mark</td>
+              </tr>
+              <tr>
+                <td style="text-align: left">Divisa</td>
+                <td style="text-align: right">EUR</td>
+              </tr>
+              <tr>
+                <td style="text-align: left">TAE efectiva cargada al prestatario</td>
+                <td style="text-align: right">33%</td>
+              </tr>
+              <tr>
+                <td style="text-align: left">Préstamos pendientes en Aristos</td>
+                <td style="text-align: right">2 121 296</td>
+              </tr>
+              <tr>
+                <td style="text-align: left">Ampliación del periodo</td>
+                <td style="text-align: right">No</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12">
+          <app-card [hidHeader]="true" blockClass="m-t-15" style="background-color: #9FA8B4">
+            <h3 class="card-title">Información</h3>
+            <p class="card-text" style="text-align: justify">Aforti Finance es un prestamista no bancario que concede crédito a pymes en cuatro regiones de Polonia: Polonia Central, Pomerania, Gran Polonia y Silesia. La empresa forma parte de Aforti Holding, admitido a cotización oficial en el Mercado de Valores de Varsovia. La mayoría de los prestatarios son empresarios individuales interesados en contratar préstamos para el capital operativo de sus empresas. Aforti Finance ha desarrollado un riguroso protocolo de evaluación crediticia. Los clientes deben contar con una buena tradición de solvencia y un fuerte flujo de efectivo en la empresa. Por término medio, se aprueba la cuarta parte de las solicitudes. Aforti Holding SA ofrece una garantía de recompra de grupo. Esto significa que garantizará la ejecución de las obligaciones de recompra.</p>
+          </app-card>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12">
+          <app-card [hidHeader]="true" blockClass="m-t-15" style="background-color: #9FA8B4">
+            <h3 class="card-title">Detalle de país</h3>
+            <ngb-tabset type="pills" class="mb-3">
+              <ngb-tab title="Información general" class="mb-3">
+                <ng-template ngbTabContent>
+                  <div table-responsive mt-5>
+                    <table datatable [dtOptions]="dtResponsiveOptions" class="table table-striped nowrap table-hover row-border hover">
+                      <thead>
+                      <tr>
+                        <th>Originador</th>
+                        <th>Calificaciones de Aristos</th>
+                        <th style="width: 20px">Tipo de préstamos</th>
+                        <th>País</th>
+                        <th>Divisa</th>
+                        <th>Garantía de recompra</th>
+                        <th>Dinero propio invertido</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+
+                        <td><img src="https://s3.eu-central-1.amazonaws.com/mintos-prod-public-files/CE472002-446B-0C54-C421-1D8034F66C96.png"> </td>
+                        <td>A</td>
+                        <td><i class="feather icon-home" style="font-size: 20px"></i></td>
+                        <td><i class="flag-icon flag-icon-gr flag-icon-squared"></i></td>
+                        <td>GBP</td>
+                        <td><i class="feather icon-shield" style="font-size: 20px"></i></td>
+                        <td>10%</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+              <ngb-tab title="Detalles" class="mb-3">
+                <ng-template ngbTabContent>
+                  <div table-responsive mt-5>
+                    <table datatable [dtOptions]="dtResponsiveOptions" class="table table-striped nowrap table-hover row-border hover">
+                      <thead>
+                      <tr>
+                        <th>Originador</th>
+                        <th>Calificaciones de Aristos</th>
+                        <th style="width: 20px">Tipo de préstamos</th>
+                        <th>País</th>
+                        <th>Divisa</th>
+                        <th>Garantía de recompra</th>
+                        <th>Dinero propio invertido</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+
+                        <td><img src="https://s3.eu-central-1.amazonaws.com/mintos-prod-public-files/CE472002-446B-0C54-C421-1D8034F66C96.png"> </td>
+                        <td>A</td>
+                        <td><i class="feather icon-home" style="font-size: 20px"></i></td>
+                        <td><i class="flag-icon flag-icon-gr flag-icon-squared"></i></td>
+                        <td>GBP</td>
+                        <td><i class="feather icon-shield" style="font-size: 20px"></i></td>
+                        <td>10%</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </ng-template>
+              </ngb-tab>
+            </ngb-tabset>
+
+          </app-card>
+        </div>
+      </div>
+    </app-card>
+  </div>
+</div>
